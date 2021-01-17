@@ -1,0 +1,48 @@
+2021-01-17 12:06:40.962  INFO 13308 --- [main] c.e.demo.TexasHamburgerAdminApplication  : Starting TexasHamburgerAdminApplication using Java 1.8.0_241 on DESKTOP-1GF8QTE with PID 13308 (D:\eclipse_workspace\TexasHamburgerAdmin\target\classes started by radhi in D:\eclipse_workspace\TexasHamburgerAdmin)
+2021-01-17 12:06:40.965  INFO 13308 --- [main] c.e.demo.TexasHamburgerAdminApplication  : No active profile set, falling back to default profiles: default
+2021-01-17 12:06:41.375  INFO 13308 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2021-01-17 12:06:41.412  INFO 13308 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 34 ms. Found 3 MongoDB repository interfaces.
+2021-01-17 12:06:41.676  INFO 13308 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-01-17 12:06:41.682  INFO 13308 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-01-17 12:06:41.682  INFO 13308 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-01-17 12:06:41.736  INFO 13308 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-01-17 12:06:41.737  INFO 13308 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 739 ms
+2021-01-17 12:06:41.864  INFO 13308 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2021-01-17 12:06:41.900  INFO 13308 --- [cluster-rtt-ClusterId{value='600498d1771e954ddadb3f97', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:202}] to localhost:27017
+2021-01-17 12:06:41.900  INFO 13308 --- [cluster-ClusterId{value='600498d1771e954ddadb3f97', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:203}] to localhost:27017
+2021-01-17 12:06:41.900  INFO 13308 --- [cluster-ClusterId{value='600498d1771e954ddadb3f97', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=12342200}
+2021-01-17 12:06:42.193  INFO 13308 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-01-17 12:06:42.362  INFO 13308 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-01-17 12:06:42.370  INFO 13308 --- [main] c.e.demo.TexasHamburgerAdminApplication  : Started TexasHamburgerAdminApplication in 1.739 seconds (JVM running for 2.52)
+2021-01-17 12:07:49.170  INFO 13308 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-01-17 12:07:49.170  INFO 13308 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-01-17 12:07:49.172  INFO 13308 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-01-17 12:07:49.427  INFO 13308 --- [http-nio-8080-exec-1] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:204}] to localhost:27017
+2021-01-17 12:07:49.464  INFO 13308 --- [http-nio-8080-exec-1] c.e.demo.controller.MenuController       : New menu created!
+2021-01-17 12:11:08.275 ERROR 13308 --- [http-nio-8080-exec-7] c.e.demo.controller.MenuController       : null
+2021-01-17 12:13:09.930  INFO 13308 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-01-17 12:13:10.256  INFO 13308 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-01-17 12:13:10.260  INFO 13308 --- [RMI TCP Connection(2)-127.0.0.1] org.mongodb.driver.connection            : Closed connection [connectionId{localValue:3, serverValue:204}] to localhost:27017 because the pool has been closed.
+2021-01-17 12:18:31.721  INFO 9772 --- [main] c.e.demo.TexasHamburgerAdminApplication  : Starting TexasHamburgerAdminApplication using Java 1.8.0_241 on DESKTOP-1GF8QTE with PID 9772 (D:\eclipse_workspace\TexasHamburgerAdmin\target\classes started by radhi in D:\eclipse_workspace\TexasHamburgerAdmin)
+2021-01-17 12:18:31.724  INFO 9772 --- [main] c.e.demo.TexasHamburgerAdminApplication  : No active profile set, falling back to default profiles: default
+2021-01-17 12:18:32.127  INFO 9772 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2021-01-17 12:18:32.165  INFO 9772 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 35 ms. Found 3 MongoDB repository interfaces.
+2021-01-17 12:18:32.420  INFO 9772 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-01-17 12:18:32.426  INFO 9772 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-01-17 12:18:32.426  INFO 9772 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-01-17 12:18:32.476  INFO 9772 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-01-17 12:18:32.477  INFO 9772 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 718 ms
+2021-01-17 12:18:32.599  INFO 9772 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2021-01-17 12:18:32.639  INFO 9772 --- [cluster-ClusterId{value='60049b9834397f03b8c65f10', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:205}] to localhost:27017
+2021-01-17 12:18:32.639  INFO 9772 --- [cluster-rtt-ClusterId{value='60049b9834397f03b8c65f10', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:206}] to localhost:27017
+2021-01-17 12:18:32.639  INFO 9772 --- [cluster-ClusterId{value='60049b9834397f03b8c65f10', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=13097800}
+2021-01-17 12:18:32.937  INFO 9772 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-01-17 12:18:33.108  INFO 9772 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-01-17 12:18:33.116  INFO 9772 --- [main] c.e.demo.TexasHamburgerAdminApplication  : Started TexasHamburgerAdminApplication in 1.689 seconds (JVM running for 2.456)
+2021-01-17 12:18:40.490  INFO 9772 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-01-17 12:18:40.491  INFO 9772 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-01-17 12:18:40.491  INFO 9772 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2021-01-17 12:18:40.554  INFO 9772 --- [http-nio-8080-exec-1] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:207}] to localhost:27017
+2021-01-17 12:19:25.185  INFO 9772 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-01-17 12:19:25.459  INFO 9772 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-01-17 12:19:25.464  INFO 9772 --- [RMI TCP Connection(2)-127.0.0.1] org.mongodb.driver.connection            : Closed connection [connectionId{localValue:3, serverValue:207}] to localhost:27017 because the pool has been closed.
