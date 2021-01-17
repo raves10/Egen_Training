@@ -6,6 +6,7 @@ Texas Hamburger Admin SpringBoot Application with MongoDB.
 Following are the URLS of the microservices:
 
 Model : Location 
+
 GET : http://localhost:8080/locationapi/locations     You can also use RequestParameter "name" to search by location name
 
 POST : http://localhost:8080/locationapi/locations
@@ -16,6 +17,7 @@ PUT : http://localhost:8080/locationapi/locations/{id}
 
 
 Model : Menu
+
 GET : http://localhost:8080/menuapi/menus   You can also use RequestParameters "name" to search by menu name and "category" to search by menu category 
 
 POST : http://localhost:8080/menuapi/menus
@@ -28,6 +30,7 @@ GET : http://localhost:8080/menuapi/menus/comboAllowed/{combo}   Here PathVariab
 
 
 Model : Reservation
+
 GET : http://localhost:8080/reservationapi/reservations     You can also use RequestParameter "name" to search reservation by customer name
 
 POST : http://localhost:8080/reservationapi/reservations
