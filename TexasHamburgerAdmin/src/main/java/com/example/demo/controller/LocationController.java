@@ -23,7 +23,7 @@ import com.example.demo.repository.LocationRepo;
 import lombok.extern.log4j.Log4j2;
 
 @RestController
-@RequestMapping("/locationapi")
+@RequestMapping("/api")
 @Log4j2
 public class LocationController {
 	
