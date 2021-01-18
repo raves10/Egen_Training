@@ -20,6 +20,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.model.Location;
 import com.example.demo.repository.LocationRepo;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.extern.log4j.Log4j2;
 
 @RestController
@@ -30,6 +35,15 @@ public class LocationController {
 	@Autowired
 	private LocationRepo locationRepo;
 	
+	@Operation(summary = "Get all locations")
+	@ApiResponses(value = { 
+	  @ApiResponse(responseCode = "200", description = "Locations found", 
+	    content = { @Content(mediaType = "application/json", 
+	      schema = @Schema(implementation = Location.class)) }),
+	  @ApiResponse(responseCode = "204", description = "No content", 
+	    content = @Content), 
+	  @ApiResponse(responseCode = "500", description = "Internal server error", 
+	    content = @Content) })
 	@GetMapping("/locations")
 	public ResponseEntity<List<Location>> getAllLocations(@RequestParam(required = false) String name) {
 		try {
@@ -53,6 +67,13 @@ public class LocationController {
 		}
 	}
 
+	@Operation(summary = "Get location by Id")
+	@ApiResponses(value = { 
+	  @ApiResponse(responseCode = "200", description = "Location found", 
+	    content = { @Content(mediaType = "application/json", 
+	      schema = @Schema(implementation = Location.class)) }),
+	  @ApiResponse(responseCode = "204", description = "No content", 
+	    content = @Content)})
 	@GetMapping("/locations/{id}")
 	public ResponseEntity<Location> getLocationById(@PathVariable("id") String id) {
 		Optional<Location> locationData = locationRepo.findById(id);
@@ -65,6 +86,13 @@ public class LocationController {
 		}
 	}
 
+	@Operation(summary = "Create Location")
+	@ApiResponses(value = { 
+	  @ApiResponse(responseCode = "201", description = "Location created", 
+	    content = { @Content(mediaType = "application/json", 
+	      schema = @Schema(implementation = Location.class)) }),
+	 @ApiResponse(responseCode = "500", description = "Internal server error", 
+	    content = @Content) })
 	@PostMapping("/locations")
 	public ResponseEntity<Location> createLocation(@RequestBody Location location) {
 		try {
@@ -77,6 +105,13 @@ public class LocationController {
 		}
 	}
 
+	@Operation(summary = "Update location by Id")
+	@ApiResponses(value = { 
+	  @ApiResponse(responseCode = "200", description = "Locations updated", 
+	    content = { @Content(mediaType = "application/json", 
+	      schema = @Schema(implementation = Location.class)) }),
+	 @ApiResponse(responseCode = "404", description = "Not found", 
+	    content = @Content) })
 	@PutMapping("/locations/{id}")
 	public ResponseEntity<Location> updateLocation(@PathVariable("id") String id, @RequestBody Location location) {
 		Optional<Location> locationData = locationRepo.findByLocId(id);
@@ -94,6 +129,13 @@ public class LocationController {
 		}
 	}
 
+	@Operation(summary = "Delete location by Id")
+	@ApiResponses(value = { 
+	  
+	  @ApiResponse(responseCode = "204", description = "Location deleted", 
+	    content = @Content), 
+	  @ApiResponse(responseCode = "500", description = "Internal server error", 
+	    content = @Content) })
 	@DeleteMapping("/locations/{id}")
 	public ResponseEntity<HttpStatus> deleteLocation(@PathVariable("id") String id) {
 		try {
@@ -107,6 +149,13 @@ public class LocationController {
 
 	}
 
+	@Operation(summary = "Delete all locations")
+	@ApiResponses(value = { 
+	 
+	  @ApiResponse(responseCode = "204", description = "All locations deleted", 
+	    content = @Content), 
+	  @ApiResponse(responseCode = "500", description = "Internal server error", 
+	    content = @Content) })
 	@DeleteMapping("/locations")
 	public ResponseEntity<HttpStatus> deleteAllLocations() {
 		try {

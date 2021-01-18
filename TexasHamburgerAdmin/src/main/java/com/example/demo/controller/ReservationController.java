@@ -16,9 +16,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
 import com.example.demo.model.Reservation;
 import com.example.demo.repository.ReservationRepo;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.extern.log4j.Log4j2;
 
 @RestController
@@ -29,6 +35,15 @@ public class ReservationController {
 	@Autowired
 	private ReservationRepo reservationRepo;
 	
+	@Operation(summary = "Get all reservations")
+	@ApiResponses(value = { 
+	  @ApiResponse(responseCode = "200", description = "Reservations found", 
+	    content = { @Content(mediaType = "application/json", 
+	      schema = @Schema(implementation = Reservation.class)) }),
+	  @ApiResponse(responseCode = "204", description = "No content", 
+	    content = @Content), 
+	  @ApiResponse(responseCode = "500", description = "Internal server error", 
+	    content = @Content) })
 	@GetMapping("/reservations")
 	public ResponseEntity<List<Reservation>> getAllReservations(@RequestParam(required = false) String name) {
 		try {
@@ -53,6 +68,13 @@ public class ReservationController {
 		}
 	}
 
+	@Operation(summary = "Get reservation by Id")
+	@ApiResponses(value = { 
+	  @ApiResponse(responseCode = "200", description = "Reservation found", 
+	    content = { @Content(mediaType = "application/json", 
+	      schema = @Schema(implementation = Reservation.class)) }),
+	  @ApiResponse(responseCode = "404", description = "Not found", 
+	    content = @Content) })
 	@GetMapping("/reservations/{id}")
 	public ResponseEntity<Reservation> getReservationById(@PathVariable("id") String id) {
 		Optional<Reservation> reservationData = reservationRepo.findById(id);
@@ -65,6 +87,13 @@ public class ReservationController {
 		}
 	}
 
+	@Operation(summary = "Create reservation")
+	@ApiResponses(value = { 
+	  @ApiResponse(responseCode = "201", description = "Reservation created", 
+	    content = { @Content(mediaType = "application/json", 
+	      schema = @Schema(implementation = Reservation.class)) }),
+	  @ApiResponse(responseCode = "500", description = "Internal server error", 
+	    content = @Content) })
 	@PostMapping("/reservations")
 	public ResponseEntity<Reservation> createReservation(@RequestBody Reservation reservation) {
 		try {
@@ -77,6 +106,13 @@ public class ReservationController {
 		}
 	}
 
+	@Operation(summary = "Update Reservation by Id")
+	@ApiResponses(value = { 
+	  @ApiResponse(responseCode = "200", description = "Reservation updated", 
+	    content = { @Content(mediaType = "application/json", 
+	      schema = @Schema(implementation = Reservation.class)) }),
+	  @ApiResponse(responseCode = "404", description = "Not found", 
+	    content = @Content) })
 	@PutMapping("/reservations/{id}")
 	public ResponseEntity<Reservation> updateReservation(@PathVariable("id") String id, @RequestBody Reservation reservation) {
 		Optional<Reservation> reservationData = reservationRepo.findByReservationId(id);
@@ -94,6 +130,13 @@ public class ReservationController {
 		}
 	}
 
+	@Operation(summary = "Delete reservations by Id")
+	@ApiResponses(value = { 
+	  
+	  @ApiResponse(responseCode = "204", description = "No content", 
+	    content = @Content), 
+	  @ApiResponse(responseCode = "500", description = "Internal server error", 
+	    content = @Content) })
 	@DeleteMapping("/reservations/{id}")
 	public ResponseEntity<HttpStatus> deleteReservation(@PathVariable("id") String id) {
 		try {
@@ -107,6 +150,13 @@ public class ReservationController {
 
 	}
 
+	@Operation(summary = "Delete all reservation")
+	@ApiResponses(value = { 
+	  
+	  @ApiResponse(responseCode = "204", description = "No content", 
+	    content = @Content), 
+	  @ApiResponse(responseCode = "500", description = "Internal server error", 
+	    content = @Content) })
 	@DeleteMapping("/reservations")
 	public ResponseEntity<HttpStatus> deleteReservations() {
 		try {

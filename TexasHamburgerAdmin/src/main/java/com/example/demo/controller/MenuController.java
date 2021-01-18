@@ -16,9 +16,16 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.model.Location;
 import com.example.demo.model.Menu;
 import com.example.demo.repository.MenuRepo;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.extern.log4j.Log4j2;
 
 
@@ -30,6 +37,15 @@ public class MenuController {
 	@Autowired
 	private MenuRepo menuRepo;
 	
+	@Operation(summary = "Get all menus")
+	@ApiResponses(value = { 
+	  @ApiResponse(responseCode = "200", description = "Menu found", 
+	    content = { @Content(mediaType = "application/json", 
+	      schema = @Schema(implementation = Menu.class)) }),
+	  @ApiResponse(responseCode = "204", description = "No content", 
+	    content = @Content), 
+	  @ApiResponse(responseCode = "500", description = "Internal server error", 
+	    content = @Content) })
 	@GetMapping("/menus")
 	public ResponseEntity<List<Menu>> getAllMenus(@RequestParam(required = false) String name, @RequestParam(required = false) String category) {
 		try {
@@ -55,6 +71,14 @@ public class MenuController {
 		}
 	}
 
+	@Operation(summary = "Get menu by Id")
+	@ApiResponses(value = { 
+	  @ApiResponse(responseCode = "200", description = "Menu found", 
+	    content = { @Content(mediaType = "application/json", 
+	      schema = @Schema(implementation = Menu.class)) }),
+	 
+	  @ApiResponse(responseCode = "404", description = "Not found", 
+	    content = @Content) })
 	@GetMapping("/menus/{id}")
 	public ResponseEntity<Menu> getMenuById(@PathVariable("id") String id) {
 		Optional<Menu> menuData = menuRepo.findById(id);
@@ -67,6 +91,14 @@ public class MenuController {
 		}
 	}
 
+	@Operation(summary = "Create menu")
+	@ApiResponses(value = { 
+	  @ApiResponse(responseCode = "201", description = "Menu created", 
+	    content = { @Content(mediaType = "application/json", 
+	      schema = @Schema(implementation = Menu.class)) }),
+	  
+	  @ApiResponse(responseCode = "500", description = "Internal server error", 
+	    content = @Content) })
 	@PostMapping("/menus")
 	public ResponseEntity<Menu> createMenu(@RequestBody Menu menu) {
 		try {
@@ -80,6 +112,14 @@ public class MenuController {
 		}
 	}
 
+	@Operation(summary = "Update menu by Id")
+	@ApiResponses(value = { 
+	  @ApiResponse(responseCode = "200", description = "Menu updated", 
+	    content = { @Content(mediaType = "application/json", 
+	      schema = @Schema(implementation = Location.class)) }),
+	 
+	  @ApiResponse(responseCode = "404", description = "Not found", 
+	    content = @Content) })
 	@PutMapping("/menus/{id}")
 	public ResponseEntity<Menu> updateMenu(@PathVariable("id") String id, @RequestBody Menu menu) {
 		Optional<Menu> menuData = menuRepo.findByMenuId(id);
@@ -98,6 +138,13 @@ public class MenuController {
 		}
 	}
 
+	@Operation(summary = "Delete menu by Id")
+	@ApiResponses(value = { 
+	 
+	  @ApiResponse(responseCode = "204", description = "No content", 
+	    content = @Content), 
+	  @ApiResponse(responseCode = "500", description = "Internal server error", 
+	    content = @Content) })
 	@DeleteMapping("/menus/{id}")
 	public ResponseEntity<HttpStatus> deleteMenu(@PathVariable("id") String id) {
 		try {
@@ -111,6 +158,13 @@ public class MenuController {
 
 	}
 
+	@Operation(summary = "Delete all menus")
+	@ApiResponses(value = { 
+	 
+	  @ApiResponse(responseCode = "204", description = "No content", 
+	    content = @Content), 
+	  @ApiResponse(responseCode = "500", description = "Internal server error", 
+	    content = @Content) })
 	@DeleteMapping("/menus")
 	public ResponseEntity<HttpStatus> deleteAllMenus() {
 		try {
@@ -124,7 +178,15 @@ public class MenuController {
 	}
 
 	
-	
+	@Operation(summary = "Get all combo menus")
+	@ApiResponses(value = { 
+	  @ApiResponse(responseCode = "200", description = "Combo menus found", 
+	    content = { @Content(mediaType = "application/json", 
+	      schema = @Schema(implementation = Menu.class)) }),
+	  @ApiResponse(responseCode = "204", description = "No content", 
+	    content = @Content), 
+	  @ApiResponse(responseCode = "500", description = "Internal server error", 
+	    content = @Content) })
 	@GetMapping("/menus/comboAllowed/{combo}")
 	public ResponseEntity<List<Menu>> getByCombo(@PathVariable("combo") Boolean combo) {
 		try {
