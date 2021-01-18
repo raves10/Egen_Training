@@ -7,34 +7,34 @@ Following are the URLS of the microservices:
 
 Model : Location 
 
-GET : http://localhost:8080/locationapi/locations     You can also use RequestParameter "name" to search by location name
+GET : http://localhost:8080/api/locations     You can also use RequestParameter "name" to search by location name
 
-POST : http://localhost:8080/locationapi/locations
+POST : http://localhost:8080/api/locations
 
-DELETE : http://localhost:8080/locationapi/locations/{id} and http://localhost:8080/locationapi/locations
+DELETE : http://localhost:8080/api/locations/{id} and http://localhost:8080/api/locations
 
-PUT : http://localhost:8080/locationapi/locations/{id}
+PUT : http://localhost:8080/api/locations/{id}
 
 
 Model : Menu
 
-GET : http://localhost:8080/menuapi/menus   You can also use RequestParameters "name" to search by menu name and "category" to search by menu category 
+GET : http://localhost:8080/api/menus   You can also use RequestParameters "name" to search by menu name and "category" to search by menu category 
 
-POST : http://localhost:8080/menuapi/menus
+POST : http://localhost:8080/api/menus
 
-DELETE : http://localhost:8080/menuapi/menus/{id}  and http://localhost:8080/menuapi/menus
+DELETE : http://localhost:8080/api/menus/{id}  and http://localhost:8080/api/menus
 
-PUT : http://localhost:8080/menuapi/menus/{id}
+PUT : http://localhost:8080/api/menus/{id}
 
-GET : http://localhost:8080/menuapi/menus/comboAllowed/{combo}   Here PathVariable could be true/false
+GET : http://localhost:8080/api/menus/comboAllowed/{combo}   Here PathVariable could be true/false
 
 
 Model : Reservation
 
-GET : http://localhost:8080/reservationapi/reservations     You can also use RequestParameter "name" to search reservation by customer name
+GET : http://localhost:8080/api/reservations     You can also use RequestParameter "name" to search reservation by customer name
 
-POST : http://localhost:8080/reservationapi/reservations
+POST : http://localhost:8080/api/reservations
 
-DELETE : http://localhost:8080/reservationapi/reservations/{id} and http://localhost:8080/reservationapi/reservations
+DELETE : http://localhost:8080/api/reservations/{id} and http://localhost:8080/api/reservations
 
-PUT : http://localhost:8080/reservationapi/reservations/{id}
+PUT : http://localhost:8080/api/reservations/{id}
