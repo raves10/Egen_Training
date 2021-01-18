@@ -1,7 +1,9 @@
 Texas Hamburger Admin SpringBoot Application with MongoDB.
 
 1. Implemented log4j2 logger
-2. Developed Microservices using Rest controller.
+2. Developed Microservices using Rest controller
+3. Implemented Swagger OpenAPI 3.x  Swagger UI URL: http://localhost:8080/swagger-ui/index.html
+
 
 Following are the URLS of the microservices:
 
