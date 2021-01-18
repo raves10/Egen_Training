@@ -22,7 +22,7 @@ import com.example.demo.repository.ReservationRepo;
 import lombok.extern.log4j.Log4j2;
 
 @RestController
-@RequestMapping("/reservationapi")
+@RequestMapping("/api")
 @Log4j2
 public class ReservationController {
 
